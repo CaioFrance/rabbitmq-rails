@@ -66,9 +66,13 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    amq-protocol (2.3.2)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bunny (2.20.1)
+      amq-protocol (~> 2.3, >= 2.3.1)
+      sorted_set (~> 1, >= 1.0.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     date (3.3.3)
@@ -141,8 +145,13 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rbtree (0.4.6)
     reline (0.3.2)
       io-console (~> 0.5)
+    set (1.0.3)
+    sorted_set (1.0.3)
+      rbtree
+      set (~> 1.0)
     sqlite3 (1.5.4-x86_64-linux)
     thor (1.2.1)
     timeout (0.3.1)
@@ -158,6 +167,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bunny (>= 2.19.0)
   debug
   puma (~> 5.0)
   rails (~> 7.0.4)

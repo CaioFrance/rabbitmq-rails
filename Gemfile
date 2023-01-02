@@ -46,3 +46,4 @@ group :development do
   # gem "spring"
 end
 
+gem "bunny", ">= 2.19.0"
