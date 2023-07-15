@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "users",
+			"path": "./users"
+		},
+		{
+			"name": "service_orders",
+			"path": "./service_orders"
+		}
+	]
+}
