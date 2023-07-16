@@ -3,7 +3,7 @@ class BunnyConsumer
 
   class << self
     def call!(properties, payload)
-      return false unless VALID_MODELS.keys.include?(properties[:type])
+      return false unless VALID_MODELS.key?(properties[:type])
 
       model_klass(properties[:type]).create_or_update_from_bunny(JSON.parse(payload))
     end

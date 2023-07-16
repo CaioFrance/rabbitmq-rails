@@ -8,7 +8,7 @@ channel = connection.create_channel
 
 queue = channel.queue("aceleracao_dio_service_orders.in", durable: true, auto_delete: false)
 
-puts('\nStarting consumer!')
+puts("\nStarting consumer!")
 
 fanout_name = "aceleracao_dio_users.out"
 queue.bind(channel.exchange(fanout_name, type: "fanout"))

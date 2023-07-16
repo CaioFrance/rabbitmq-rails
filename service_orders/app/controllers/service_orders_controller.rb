@@ -15,9 +15,9 @@ class ServiceOrdersController < ApplicationController
 
   # POST /service_orders
   def create
-    @service_order = ServiceOrder.new(service_order_params)
+    @service_order = ServiceOrder.generate(service_order_params)
 
-    if @service_order.save
+    if @service_order.persisted?
       render json: @service_order, status: :created, location: @service_order
     else
       render json: @service_order.errors, status: :unprocessable_entity
@@ -47,6 +47,6 @@ class ServiceOrdersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def service_order_params
-    params.require(:service_order).permit(:customer_id, :description, :started_at, :finished_at)
+    params.require(:service_order).permit(:email, :description)
   end
 end
